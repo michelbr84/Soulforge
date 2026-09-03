@@ -1,0 +1,31 @@
+name: validate
+
+# The skill is markdown, so nothing compiles and nothing has tests in the usual
+# sense. What can break is structural and invisible in a diff: frontmatter that
+# stops parsing, a pointer to a renamed file, a manifest whose plugin name no
+# longer matches the marketplace entry. Every one of those only shows up when
+# somebody tries to install the skill. This catches them first.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - run: pip install --disable-pip-version-check pyyaml
+
+      - name: Validate plugin structure
+        run: python3 scripts/validate.py
