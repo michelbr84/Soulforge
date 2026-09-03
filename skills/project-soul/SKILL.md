@@ -157,6 +157,11 @@ A visible gap is worth more than a beautiful lie. It nags someone into filling i
 
 When the user gives thin answers, keep them thin. Three words stay three words. Inflating them into a paragraph is invention wearing the user's voice.
 
+Two things help when the interview was thin overall:
+
+- **Say so at the top of the document, and drop the "we".** A soul document is normally written in the project's collective voice, but "we believe" over material nobody supplied puts invented conviction in someone's mouth. Quote and credit what was actually said, leave gaps for the rest, and open with a short note explaining why the document reads that way. A reader who knows which parts were decided out loud is better served than one handed a confident document built on four short answers.
+- **Record declined candidates as questions, never as commitments.** When you offered choices and the user picked "none of these", the candidates are still the best starting point for a later pass — write them down as open questions so the next run has somewhere to begin, and make it unmistakable that nobody has agreed to them.
+
 ## Language
 
 The document is written in English — it is a project artifact meant to be read by future contributors, not a reply to the person you're talking to.
