@@ -1,0 +1,16 @@
+{
+  "name": "soulforge",
+  "owner": {
+    "name": "michelbr84",
+    "url": "https://github.com/michelbr84"
+  },
+  "plugins": [
+    {
+      "name": "soulforge",
+      "source": "./",
+      "description": "A skill that interviews you and writes your project's SOUL.md — the document that explains why it exists.",
+      "category": "documentation",
+      "keywords": ["soul", "identity", "manifesto", "vision", "principles", "purpose"]
+    }
+  ]
+}
