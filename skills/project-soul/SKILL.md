@@ -61,15 +61,17 @@ Read `${CLAUDE_SKILL_DIR}/references/interview.md` before this stage. It holds t
 
 The shape, which matters as much as the questions:
 
-- **Round 1: 4–6 questions in a single message.** Open by showing what you learned and asking them to correct it. Never drip one question per turn — it feels like an interrogation and burns the goodwill you need for the honest answers.
-- **Round 2: 1–4 follow-ups** that exist only because of what Round 1 said.
-- Then a draft review turn. Target three user turns, ceiling of four. Five questions if five are enough; up to ten when the project genuinely needs them.
+- **Round 1 is one message containing everything:** what you learned in Stage 1, the two or three decisions you read as positions for them to correct, and 4–6 questions. Do not spend a turn on a menu before it — a user who has to answer a process question before saying anything about their project has spent a round trip on nothing. Offer the escape hatch inline instead: if they would rather you draft the whole document from the code and have them correct it, one sentence tells them so.
+- **Round 2: 1–4 follow-ups** that exist only because of what Round 1 said, plus any remaining questions if they are clearly engaged.
+- Then a draft review turn. Three user turns, ceiling of four. Five questions if five are enough; up to ten when the project genuinely needs them.
+
+Never drip one question per turn. It feels like an interrogation, and it burns the goodwill you need for the honest answers.
 
 Every question about something inferable ships with your guess attached, because correcting is far cheaper than composing. But the four things you cannot infer get asked **blank**, with no hypothesis to anchor them: the origin moment, the belief, what the project refuses to become, and what's at stake if it works. A hypothesis there doesn't help the user remember — it hands them your invention to nod at.
 
 Ask for scenes, not principles. "I wanted it simpler" is not an origin story; "the third time I rewrote the same 200 lines of boilerplate on a Sunday" is. One probe per abstract answer, at most two in the whole interview — past that you're badgering.
 
-`AskUserQuestion` is for genuinely discrete choices only: the depth gate at the start (fast / full / draft-and-correct), turning an "I don't know" into a choice between candidates drawn from the project, and the final go-ahead before writing the file. Origin, dream, promise, and personality need prose — forcing them into four options destroys the exact thing you're trying to collect.
+`AskUserQuestion` is for genuinely discrete choices only: turning an "I don't know" into a choice between candidates drawn from the project, and the final go-ahead before writing the file. Origin, dream, promise, and personality need prose — forcing them into four options destroys the exact thing you're trying to collect, and spending one on how deep to go costs a turn you could have spent asking.
 
 ### Stage 3 — Write the soul
 

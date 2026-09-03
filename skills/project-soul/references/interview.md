@@ -12,15 +12,21 @@ correction, never drip one question per turn, and never let the person feel proc
 | Step | What happens | User turns |
 |---|---|---|
 | Stage 1 analysis | You read. No questions. | 0 |
-| Depth gate | One `AskUserQuestion`: how deep do they want to go | 1 |
-| **Round 1** | 4–6 questions in a single message, opened by your reading of the project | 1 |
+| **Round 1** | One message: your reading of the project, the positions you want corrected, and 4–6 questions | 1 |
 | **Round 2** | 1–4 follow-ups that exist only because of Round 1 | 1 |
 | Draft review | You show the draft, they correct it | 1 |
 
-Target three or four user turns after the gate. Five questions if five are enough; up to
-ten when the project genuinely needs them. Never send a message containing one question
-and nothing else — that is an interrogation, and people start giving short answers to make
-it end.
+Three user turns, four at the outside. Five questions if five are enough; up to ten when
+the project genuinely needs them.
+
+**The analysis and the first questions go in the same message.** Sending the summary alone,
+or a menu about how deep to go, spends a round trip before the user has said one thing about
+their project. The depth choice is offered as a sentence inside Round 1, not as a turn of its
+own — and it is more honest that way, since nobody can sensibly pick "five questions or ten"
+before seeing what the questions feel like.
+
+Never send a message containing one question and nothing else — that is an interrogation, and
+people start giving short answers to make it end.
 
 ## Which questions get a hypothesis and which don't
 
@@ -61,8 +67,18 @@ and their corrections are usually the most revealing thing in the session.
 >   and commit instead of doing it at runtime, and you refused a config file until v0.4.
 >
 > Correct anything wrong there. What I can't get from the code is why you started and what
-> you refuse to let this become. Six questions below — answer as short as you like, half a
-> sentence is fine, and "skip" is fine.
+> you refuse to let this become — so:
+>
+> 1. What was the moment you thought "this should exist"? Not the reason, the moment.
+> 2. What do you believe about this problem that most people building similar things don't?
+> 3. What would this have to do for you to stop recognizing it?
+> 4. If it works, what changes for the people using it?
+> 5. Who do you want around this — not users, the people who'd argue about it with you?
+> 6. My guess is you're fighting tools that treat the user as the thing that's broken. Is
+>    that it, or is it something else?
+>
+> Answer as short as you like — half a sentence is fine, and "skip" is fine. If you'd rather
+> I just draft the whole thing from the code and you correct it, say so and skip all six.
 
 ## The question bank
 
@@ -158,14 +174,15 @@ in the whole interview. Past that you are badgering, and the answers get worse.
 Only where two to four options genuinely span the space. Soul questions need prose, and
 forcing them into options destroys the thing you are collecting.
 
-Use it for exactly four things:
+Use it for exactly three things:
 
-1. **The depth gate**, before Round 1 — *Fast (about five questions)* / *Full (up to ten)* /
-   *Draft it from the code and I'll correct you*.
-2. **Turning an "I don't know" into a choice**, offering two or three candidates drawn from
+1. **Turning an "I don't know" into a choice**, offering two or three candidates drawn from
    the project — always with a fourth option meaning "none of these, I'll say it myself."
-3. **The language of the interview**, if it isn't obvious which one the person prefers.
-4. **The final go-ahead** before writing the file.
+2. **The language of the interview**, if it isn't obvious which one the person prefers.
+3. **The final go-ahead** before writing the file.
+
+Not for how deep to go. That is offered as a sentence in Round 1, because a tool call there
+costs a whole turn and asks people to choose a depth before they have seen a single question.
 
 Never use it for the origin story, the dream, the promise, or the personality.
 

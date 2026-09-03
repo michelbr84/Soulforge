@@ -112,8 +112,15 @@ Give the user five to eight lines: what it is, who it seems to be for, what stag
 at, and the two or three decisions that look like a philosophy rather than an accident.
 Ask them to correct it.
 
+**This summary is not a turn of its own.** It opens the Round 1 message and is followed
+immediately by the questions, in the same message. Sending it alone and waiting spends a
+round trip on something the user cannot act on.
+
 Frame it as a hypothesis, always. Being told "no, that's not why I did that" is a good
 outcome — the correction is usually the most revealing thing they say all session.
+
+State what you could not read, too — a file imported but missing, a directory you skipped.
+It costs one line, and it stops you from quietly building a conclusion on a gap.
 
 ## When there is almost nothing to read
 
