@@ -11,6 +11,8 @@ Soulforge is a Claude Code plugin whose only content is the `project-soul` skill
 - `.claude-plugin/` holds the plugin and marketplace manifests that make the repo
   installable by anyone.
 - `evals/` is for testing the skill and is not shipped to users.
+- `scripts/validate.py` runs the structural checks. Run it before pushing —
+  `python3 scripts/validate.py` — and CI runs the same script on every PR.
 
 ## Constraints
 
@@ -21,6 +23,9 @@ Soulforge is a Claude Code plugin whose only content is the `project-soul` skill
   paths do not resolve when the skill is installed as a plugin.
 - Keep `SKILL.md` under 500 lines. Depth belongs in `references/`, loaded on demand.
 - Do not add `.claude/` to `.gitignore` — it would silently drop the symlink.
+- The canonical `SOUL.md` section list lives in `scripts/validate.py`. Changing the
+  document's shape means editing it there, in `SKILL.md`, and in the template —
+  the validator fails if those three disagree, which is the point.
 
 ## The skill's own rule applies to this repo
 
