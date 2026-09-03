@@ -1,0 +1,14 @@
+{
+  "name": "soulforge",
+  "displayName": "Soulforge",
+  "description": "Discover, define, and preserve the soul of a project — why it exists, what it believes, and what it must never become.",
+  "version": "0.1.0",
+  "author": {
+    "name": "michelbr84",
+    "email": "166889728+michelbr84@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/michelbr84/Soulforge",
+  "repository": "https://github.com/michelbr84/Soulforge",
+  "license": "MIT",
+  "keywords": ["identity", "purpose", "manifesto", "vision", "principles", "documentation"]
+}

@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+*.swp
+.idea/
+.vscode/
+
+# Logs and scratch
+*.log
+tmp/
+
+# Local Claude Code settings only — never ignore .claude/skills/,
+# which carries the symlink that makes this repo's own skill load.
+.claude/settings.local.json

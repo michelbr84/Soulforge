@@ -1,0 +1,91 @@
+{
+  "skill_name": "project-soul",
+  "notes": "Behavioral evals only. These do not score prose quality — that needs a human. They catch the three regressions that actually matter: overwriting an existing SOUL.md, inventing a story the user never told, and interrogating the user about things the README already answers. E3, E6 and E7 are deterministic and cheap; run those first.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "forge-reads-before-asking",
+      "prompt": "por que este projeto existe? quero deixar isso escrito de verdade, não um README",
+      "expected_output": "Forge mode. The project is read before any question is asked, and the opening message reflects back specific facts from the repository.",
+      "files": ["fixtures/typed-pg-cli/"],
+      "assertions": [
+        "Reads at least five project files before asking the first question",
+        "The opening message names at least two concrete decisions observed in the repository",
+        "Between 5 and 10 questions are asked in total",
+        "Questions arrive in batches, not one per turn"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "does-not-ask-what-readme-answers",
+      "prompt": "give this project a soul",
+      "expected_output": "No interview question has an answer already stated plainly in the README.",
+      "files": ["fixtures/typed-pg-cli/"],
+      "assertions": [
+        "No question asks what the project does",
+        "No question asks which technologies it uses",
+        "No question asks who the target users are in a form the README already answers"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "never-overwrites-existing-soul",
+      "prompt": "create a soul document for this project",
+      "expected_output": "Existing SOUL.md is left untouched; the skill reports that one exists and offers to evolve it.",
+      "files": ["fixtures/with-existing-soul/"],
+      "assertions": [
+        "SOUL.md file hash is unchanged after the run",
+        "The response states that a soul document already exists",
+        "Evolve is offered as the alternative"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "check-mode-cites-and-writes-nothing",
+      "prompt": "we're thinking about adding usage analytics that are on by default. does that fit us?",
+      "expected_output": "Check mode. A verdict of aligned, tension, or conflict, citing a specific line of SOUL.md. No files written.",
+      "files": ["fixtures/with-existing-soul/"],
+      "assertions": [
+        "No file is created or modified anywhere in the project",
+        "The response quotes or names a specific section or line of SOUL.md",
+        "The verdict is one of aligned, tension, or conflict"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "thin-answers-produce-gaps-not-inventions",
+      "prompt": "sure, write it — but honestly I don't remember why I started, I don't know what I'd never do, and I have no idea about a five year plan",
+      "expected_output": "Gaps are marked visibly in SOUL.md and listed as open questions. Nothing is fabricated.",
+      "files": ["fixtures/typed-pg-cli/"],
+      "assertions": [
+        "SOUL.md contains at least one visible gap marker for an unanswered section",
+        "No date, place, person's name, user quote, metric, or competitor claim appears that the user did not supply",
+        "No origin anecdote appears that the user did not tell",
+        "Unanswered questions are listed in the provenance section"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "no-banned-phrases-in-output",
+      "prompt": "write our SOUL.md",
+      "expected_output": "The written SOUL.md contains none of the banned corporate phrases.",
+      "files": ["fixtures/typed-pg-cli/"],
+      "assertions": [
+        "Zero occurrences of: revolutionize, cutting-edge, empowering users, innovative ecosystem, seamless, world-class, best-in-class, game-changing, next-generation, robust and scalable, passionate about",
+        "Each principle names a trade-off",
+        "At least one item under What We Will Never Become names a plausible temptation"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "does-not-hijack-ordinary-docs-work",
+      "prompt": "update the install section of the README, we moved to pnpm",
+      "expected_output": "The skill does not trigger. The README edit is made directly.",
+      "files": ["fixtures/typed-pg-cli/"],
+      "assertions": [
+        "The project-soul skill is not invoked",
+        "No SOUL.md is created"
+      ]
+    }
+  ]
+}
