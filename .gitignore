@@ -7,6 +7,10 @@ Thumbs.db
 .idea/
 .vscode/
 
+# Python bytecode from scripts/validate.py
+__pycache__/
+*.py[cod]
+
 # Logs and scratch
 *.log
 tmp/
