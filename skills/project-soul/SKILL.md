@@ -144,6 +144,10 @@ Three guardrails. **Write no files in this mode.** Advise, don't veto; the perso
 
 **You may never infer:** the origin moment, the motive, any emotion, any belief, what the project refuses to become, the dream, the promise, the chosen personality, any claim about what the creator intended, or anything containing a date, a place, a person's name, a user quote, a metric, or a claim about a competitor.
 
+**Principles sit exactly on that line, so handle them carefully.** A principle is read off decisions you can see in the repository — which is allowed — but it is also a forward commitment, and only a person can make one of those. So a principle nobody confirmed is written as observed past behavior ("this project has chosen X over Y, repeatedly"), marked as a candidate awaiting confirmation, and listed as an open question. Never in the project's voice as a promise. The difference sounds small and isn't: one describes what happened, the other binds people who never agreed to it.
+
+**Don't merge identities either.** The person you interviewed, the person who wrote the README, and the name in the commits may not be the same person. If you haven't established that they are, don't write a sentence that assumes it.
+
 Before you write the file, do the **sourcing pass**. Go through the draft claim by claim. For every sentence written in the project's voice — *we believe*, *we started because*, *we will never* — name where it came from: which answer, or which file. If you can't name one, you invented it. Cut it, or turn it into a marked gap:
 
 ```markdown
@@ -180,6 +184,8 @@ Run this against the draft, and tell the user how it went in two lines.
 6. **The stranger test.** Would someone who has never seen this repository learn one specific, surprising thing? Name it out loud. If you can't, the draft is empty.
 7. **The five-year test.** Anything that dates the document to this month — a version number, a current dependency, a named competitor — moves to the companion `docs/soul-in-practice.md` in the user's project, or goes.
 8. **The one sentence.** Under about fifteen words, no stacked conjunctions, quotable with no context around it.
+
+A check can fail because a section is an honest gap — the teeth test cannot pass when nobody answered the question. Report the failure and leave the gap. A failing check is a reason to go back to the person, never a reason to write something that makes it pass.
 
 ## Reference files
 

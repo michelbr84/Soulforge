@@ -138,6 +138,12 @@ protects nothing.
 
 Format each as a bold name, one or two lines of explanation, then the trade-off.
 
+If you derived a principle from the code rather than from the interview, say so at the head
+of the section and write it in the observed past tense — what this project has chosen before,
+not what it promises to choose. Then list confirming them as an open question. Principles are
+the section most likely to be quoted back at someone in an argument, which is exactly why
+none of them should be words the author never said.
+
 ## Personality
 
 **Purpose:** how the project behaves — which decides how docs are written, how errors
